@@ -1,0 +1,46 @@
+<h1 mat-dialog-title><strong>{{action}} Book</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field *ngIf="action == 'Add' || action == 'Update' ; ">
+    <input placeholder="BookName" matInput [(ngModel)]="local_data.bookName">
+  </mat-form-field>
+  <mat-form-field *ngIf="action == 'View' ; ">
+    <input placeholder="BookName" matInput [(ngModel)]="local_data.bookName" readonly>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Add' || action == 'Update' ; ">
+    <input placeholder="Author" matInput [(ngModel)]="local_data.author">
+  </mat-form-field>
+  <mat-form-field *ngIf="action == 'View' ; ">
+    <input placeholder="Author" matInput [(ngModel)]="local_data.author" readonly>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Add' || action == 'Update' ; " appearance="fill">
+    <mat-label>Book Category</mat-label>
+    <select matNativeControl [(ngModel)]="local_data.bookCategory">
+      <option value="" selected>--</option>
+      <option value="Computer">Computer</option>
+      <option value="Health">Health</option>
+      <option value="Science">Science</option>
+      <option value="Other">Other</option>
+    </select>
+  </mat-form-field>
+  <mat-form-field *ngIf="action == 'View';">
+    <input placeholder="Book Category" matInput [(ngModel)]="local_data.bookCategory" readonly>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Add' || action == 'Update' ; ">
+    <input placeholder="Number Of Copies" matInput [(ngModel)]="local_data.numberOfCopies">
+  </mat-form-field>
+  <mat-form-field *ngIf="action == 'View' ; ">
+    <input placeholder="Number Of Copies" matInput [(ngModel)]="local_data.numberOfCopies" readonly>
+  </mat-form-field>
+  <mat-form-field *ngIf="action == 'View' ; ">
+    <input placeholder="Date/Time Of Creation" matInput [(ngModel)]="local_data.dateTimeOfCreation" readonly>
+  </mat-form-field>
+
+  <div *ngIf="action == 'Delete'">Are you sure you want to delete "{{local_data.bookName}}"?</div>
+</div>
+<div mat-dialog-actions>
+  <button *ngIf="action != 'View';" mat-button (click)="doAction()">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

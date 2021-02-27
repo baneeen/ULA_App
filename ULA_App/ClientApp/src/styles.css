@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.mat-column-bookName {
+  flex: none;
+  width: 200px;
+}
+
+.mat-column-author {
+  flex: none;
+  width: 150px;
+}
+
+.mat-column-bookCategory {
+  flex: none;
+  width: 100px;
+}
+
+.mat-column-numberOfCopies {
+  flex: none;
+  width: 100px;
+}
+
+.mat-column-dateTimeOfCreation {
+  flex: none;
+  width: 200px;
+}
+
+.mat-column-action {
+  flex: none;
+  width: 150px;
+}
+.header {
+    margin : 20px 0px 30px 100px ;
+}
+
+
+@media print {
+  body *{
+    visibility: hidden;
+  }
+
+  #tableToPrint, #tableToPrint * {
+    visibility: visible;
+  }
+
+  .mat-column-action, .mat-column-action * {
+    visibility: hidden !important;
+  }
+
+    #tableToPrint {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+}
+
